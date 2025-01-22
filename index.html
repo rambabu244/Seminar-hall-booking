@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeminarSpace - Book Your Perfect Venue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SeminarSpace</div>
+            <div class="nav-items">
+                <a href="#" class="active">Home</a>
+                <a href="#halls">Halls</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <button id="my-bookings-btn">My Bookings</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Find Your Perfect Seminar Space</h1>
+            <p>Book professional seminar halls for your next event</p>
+            <div class="search-container">
+                <input type="text" id="search-capacity" placeholder="Minimum capacity">
+                <input type="text" id="search-date" placeholder="Select date">
+                <button id="search-btn">Search Halls</button>
+            </div>
+        </section>
+
+        <section id="halls" class="halls">
+            <h2>Available Halls</h2>
+            <div class="filters">
+                <select id="capacity-filter">
+                    <option value="all">All Capacities</option>
+                    <option value="50">Up to 50</option>
+                    <option value="100">Up to 100</option>
+                    <option value="200">Up to 200</option>
+                    <option value="500">Up to 500</option>
+                </select>
+                <select id="amenities-filter">
+                    <option value="all">All Amenities</option>
+                    <option value="projector">Projector</option>
+                    <option value="audio">Audio System</option>
+                    <option value="wifi">Wi-Fi</option>
+                </select>
+            </div>
+            <div class="halls-grid" id="halls-grid">
+                <!-- Halls will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Seminar Hall</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time-slot">Time Slot</label>
+                    <select id="time-slot" required>
+                        <option value="">Select a time slot</option>
+                        <option value="morning">Morning (9 AM - 1 PM)</option>
+                        <option value="afternoon">Afternoon (2 PM - 6 PM)</option>
+                        <option value="full">Full Day (9 AM - 6 PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="attendees">Number of Attendees</label>
+                    <input type="number" id="attendees" required>
+                </div>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="my-bookings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>My Bookings</h2>
+            <div id="bookings-list">
+                <!-- Bookings will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>SeminarSpace provides professional venues for your events and seminars.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@seminarspace.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SeminarSpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
